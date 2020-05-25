@@ -10,7 +10,7 @@
    Status: Development 
 
    History:
-	  --/2017 - Abdullah Ali - Write radar reader for python2
+	  01/2017 - Abdullah Ali - Write radar reader for python2
 	  05/2020 - Muhammad Ryan - Make it usable for python3
 
    Copyright 2020. BMKG. All rights reserved. 
