@@ -149,7 +149,7 @@ def EEC(fpath,res,nelevation):
 
 def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 	f0=wrl.util.get_wradlib_data_file(listpcdfpath[0])
-	raw=wrl.io.read_Rainbow(f0)
+	raw=wrl.io.read_rainbow(f0)
 	try :	
 		llon = float(raw['volume']['sensorinfo']['lon'])
 		llat = float(raw['volume']['sensorinfo']['lat'])
@@ -168,7 +168,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 	for fpath in listpcdfpath:
 		filename=fpath[len(radarpath)+1:]
 		f=wrl.util.get_wradlib_data_file(fpath)
-		raw=wrl.io.read_Rainbow(f)
+		raw=wrl.io.read_rainbow(f)
 		
 		# load site radar attribute
 		try :	
