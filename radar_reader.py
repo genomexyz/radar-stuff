@@ -162,6 +162,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 	xmax,xmin=llon+(rmax/111229),llon-(rmax/111229)
 	ymax,ymin=llat+(rmax/111229),llat-(rmax/111229)
 	n_grid=np.floor(((xmax-xmin)/res_coords)+1)
+	n_grid = int(n_grid)
 	x_grid=np.linspace(xmax,xmin,n_grid)
 	y_grid=np.linspace(ymax,ymin,n_grid)			
 
@@ -347,6 +348,7 @@ def BARON(fpath,res,nelevation,rmax):
 	xmax,xmin=llon+(rmax/111229),llon-(rmax/111229)
 	ymax,ymin=llat+(rmax/111229),llat-(rmax/111229)
 	n_grid=np.floor(((xmax-xmin)/res_coords)+1)
+	n_grid = int(n_grid)
 	x_grid=np.linspace(xmax,xmin,n_grid)
 	y_grid=np.linspace(ymax,ymin,n_grid)			
 	all_data = np.zeros((len(x_grid),len(y_grid)))
