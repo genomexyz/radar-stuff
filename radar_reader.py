@@ -235,7 +235,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 		
 		# load radar data (depend on what file you load)
 		if fpath[-7:]=='dBZ.vol':
-			print 'Extracting data '+filename+' : SWEEP-'+strsweep +' at Elevation Angle '+str(elevation)+'  deg ...'
+			print('Extracting data '+filename+' : SWEEP-'+strsweep +' at Elevation Angle '+str(elevation)+'  deg ...')
 			data = raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['data']
 			datadepth = float(raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['@depth'])
 			datamin = float(raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['@min'])
@@ -254,7 +254,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 			selisih1=a-c
 			selisih2=b-d
 			if selisih2>0:
-				print ('Matching data and coordinate shape...')
+				print('Matching data and coordinate shape...')
 				data_=np.zeros((a,b))
 				for k in range(c):
 					for j in range(d):
@@ -263,7 +263,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 						data_[c-1,d+ii]=np.nan
 					data_dbz=data_
 			if selisih1>0:
-				print ('Matching data and coordinate shape...')
+				print('Matching data and coordinate shape...')
 				for ii in range(selisih1):
 					data_[c+ii,d-1]=np.nan
 				data_dbz=data_
@@ -273,7 +273,7 @@ def GEMA(listpcdfpath,radarpath,res,rmax,sweep):
 			gridded_datadbz = np.ma.masked_invalid(gridded_dbz).reshape((len(x_grid), len(y_grid)))
 							
 		elif fpath[-5:]=='V.vol':
-			print 'Extracting data '+filename+'   : SWEEP-'+strsweep +' at Elevation Angle '+str(elevation)+'  deg ...'
+			print('Extracting data '+filename+'   : SWEEP-'+strsweep +' at Elevation Angle '+str(elevation)+'  deg ...')
 			data = raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['data']
 			datadepth = float(raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['@depth'])
 			datamin = float(raw['volume']['scan']['slice'][i]['slicedata']['rawdata']['@min'])
